@@ -7,7 +7,7 @@ light green - #BDEFA2
 */
 *{
     overflow: unset;
-    
+
 }
 @font-face {
     font-family: 'genty';
@@ -100,5 +100,17 @@ p{
     width:80%;
 }
 #dailyLink{
-margin-top: 60px;
+margin-top: 30px;
+}
+.indicator{
+    margin: 12px 10px 0 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #BDEFA2;
+}
+.indiCon{
+    font-family: 'genty';
+    margin:40px 0px 0px 40px;
+    display: flex;
 }
