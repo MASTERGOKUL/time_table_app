@@ -1,0 +1,104 @@
+/* colors
+#BDEFF2 - light blue
+#FCECAA - light yellow
+#FFD6EF - light pink
+#0E273D - dark blue
+light green - #BDEFA2
+*/
+*{
+    overflow: unset;
+    
+}
+@font-face {
+    font-family: 'genty';
+    src: url('../assests/genty-sans-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* small box */
+.small-box {
+    font-family:'genty' ;
+    text-align: center;
+    border-radius: 50px;
+    font-size: large;
+    height: 45px;
+    width: 145px;
+}
+p{
+    color: #0E273D;
+}
+.small-box p{
+    position: relative;
+    bottom: 5px;
+}
+
+/* large box */
+.large-box {
+    align-items: center;
+    padding: 2px;
+    display: flex;
+    justify-content: space-around;
+    margin: 8px;
+    margin-bottom: 20px;
+    font-family:'genty' ;
+    text-align: center;
+    border-radius: 50px;
+    font-size: medium;
+    height: 50px;
+    width: 340px;
+}
+
+/* date */
+.date{
+    justify-content: space-between;
+    margin:10px;
+    margin-bottom: 25px;
+}
+
+/* daily schedule */
+.img{
+    z-index: 2;
+    margin-top: 80px;
+    display: flex;
+}
+#leftstar{
+    height:5%;
+    width:8%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+#rightstar{
+    height:5%;
+    width:8%;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+#dailyScheduleText{
+    height:5%;
+    width:60%;
+    margin:10px;
+}
+.day-schedule{
+    margin-top: 50px;
+}
+#rainbow{
+    z-index: -1;
+    top:-200px;
+    left: -50px;
+    position: absolute;
+    height:50%;
+    width:80%;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+#line{
+    top:255px;
+    left: 80px;
+    position: absolute;
+    height:38%;
+    width:80%;
+}
+#dailyLink{
+margin-top: 60px;
+}
