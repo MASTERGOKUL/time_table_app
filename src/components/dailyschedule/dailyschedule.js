@@ -9,13 +9,13 @@ import "../main.css";
 function DailySchedule() {
   return (
     <>
-      <img src={rainbow} className="rainbow" />
+      <img src={rainbow} className="rainbow" alt="rainbow"/>
       <div className="img">
-        <img src={leftStar} className="leftstar" />
-        <img src={banner} className="dailyScheduleText" />
-        <img src={rightStar} className="rightstar" />
+        <img src={leftStar} className="leftstar" alt="leftstar"/>
+        <img src={banner} className="dailyScheduleText" alt="banner"/>
+        <img src={rightStar} className="rightstar" alt="rightstar"/>
       </div>
-      <img src={line} className="line" />
+      <img src={line} className="line" alt="line"/>
       <Date />
       <OneDay />
       <Indicator />
