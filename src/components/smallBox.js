@@ -14,7 +14,7 @@ export function SmallBox(props) {
   );
 }
 
-export function Date() {
+export function Date(props) {
   return (
     <div style={{ display: "flex" }} className="date">
       <SmallBox color="#FFD6EF" text="Monday" />
