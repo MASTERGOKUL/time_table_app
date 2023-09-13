@@ -23,8 +23,18 @@ export function OneDay(props) {
   return (
     <div className="day-schedule">
       {props.day_peroids.map((period, index) => (
-        <LargeBox color={colors[index]} code="21AM000" course={period} />
-        
+        <>
+        {props.code.map((code)=>{
+          const courseName = Object.keys(code)[0];
+          if(courseName===period){
+            return(
+              <LargeBox color={colors[index]} code={code[period]} course={period} />
+            );
+          }
+         
+          return null;
+        })}
+        </>
       ))} 
 
     </div>

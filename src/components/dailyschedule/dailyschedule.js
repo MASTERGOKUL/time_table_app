@@ -10,11 +10,12 @@ import rainbow from "../../assests/images/rainbow_rbg.png";
 import "../main.css";
 import { LoadingIndicator } from "../loading";
 const endpoint =
-  "https://script.google.com/macros/s/AKfycbyyL6ZhQqF6KlAxZoa5lDtEWrrsmhDY1kg6Oi2cxufLIOGhQw8kWHFLH7iwpnlCYnaIWA/exec";
+  "https://script.google.com/macros/s/AKfycby8RkmHQOQ_cs13LzDx4OoHJ0aDu2pUPVaf3cxtTexLJIy3bufNw8fISILRM8OrXVismw/exec";
 
 function DailySchedule() {
   const [arr, setArr] = useState(null);
   const [dayPeroids, setDayPeroids] = useState([]);
+  const [code, setCode] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Extract day periods based on current day
@@ -30,12 +31,14 @@ function DailySchedule() {
         setArr(data);
         const dayPeriods = data.data.find((item) => item[day]);
         setDayPeroids(dayPeriods ? dayPeriods[day] : []);
-
+        const code = data.code;
+        setCode(code);
+        // console.log(code);
         // Data fetching is completed, stop loading
         setLoading(false);
       } catch (error) {
         setArr(arr);
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
         setLoading(false); // Handle errors by stopping loading
       }
     }
@@ -49,6 +52,7 @@ function DailySchedule() {
       {/* Display loading indicator while fetching */}
       {!loading /* Display elements once fetching is completed */ && (
         <>
+        
           <img src={rainbow} className="rainbow" alt="rainbow" />
           <div className="img">
             <img src={leftStar} className="leftstar" alt="leftstar" />
@@ -57,7 +61,7 @@ function DailySchedule() {
           </div>
           {/* <img src={line} className="line" alt="line" /> */}
           <Date date={date} day={day} />
-          <OneDay day_peroids={dayPeroids} />
+          <OneDay day_peroids={dayPeroids} code={code} />
           <Indicator />
           <DailyLink />
         </>
