@@ -16,7 +16,12 @@ function DailySchedule() {
   const [arr, setArr] = useState(null);
   const [dayPeroids, setDayPeroids] = useState([]);
   const [loading, setLoading] = useState(true);
-        
+
+  // Extract day periods based on current day
+  const dateObject = moment();
+  const day = dateObject.format("dddd"); // Full day name
+  const date = dateObject.format("DD/MM/YY"); // date in DD/MM/YY format
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -29,18 +34,14 @@ function DailySchedule() {
         // Data fetching is completed, stop loading
         setLoading(false);
       } catch (error) {
+        setArr(arr);
         console.error("Error fetching data:", error);
         setLoading(false); // Handle errors by stopping loading
       }
     }
 
     fetchData();
-  }, []);
-
-  // Extract day periods based on current day
-  const dateObject = moment();
-  const day = dateObject.format("dddd"); // Full day name
-  const date = dateObject.format("DD/MM/YY"); // date in DD/MM/YY format
+  }, [arr, day]);
 
   return (
     <>
@@ -64,8 +65,6 @@ function DailySchedule() {
     </>
   );
 }
-
-
 
 function Indicator() {
   return (
