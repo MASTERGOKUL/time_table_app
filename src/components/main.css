@@ -189,6 +189,13 @@ td:nth-child(1) {
   position: sticky;
   left: 5px;
 }
+/* full */
+#full-route{
+  display: flex;
+  justify-content: space-between;
+  margin:10px;
+}
+
 
 /* loading style */
 .loading {
