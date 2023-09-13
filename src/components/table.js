@@ -1,4 +1,3 @@
-
 export function Table(props) {
   const Periods = ["I", "II", "III", "IV", "V"];
   const arr = props.arr;
@@ -8,9 +7,9 @@ export function Table(props) {
         <table>
           <tbody>
             <tr>
-              <td key={"preiods"}>Periods / Days</td>
+              <td key={"preiods/DAYS"}>Periods / Days</td>
               {Periods.map((cell, index) => (
-                <td id={"td" + index} key={cell.index}>
+                <td id={"td" + index} key={cell+"-"+index}>
                   {cell}
                 </td>
               ))}
@@ -19,9 +18,11 @@ export function Table(props) {
               <tr key={rowIndex}>
                 {Object.values(row).map((items, itemIndex) => (
                   <>
-                    <td key={"td2"+Object.keys(row)}>{Object.keys(row)}</td>
+                    <td key={itemIndex}>{Object.keys(row)}</td>
                     {items.map((item, subItemIndex) => (
-                      <td key={"td3"+subItemIndex}>{item}</td>
+                      <td key={subItemIndex}>
+                        {item}
+                      </td>
                     ))}
                   </>
                 ))}
