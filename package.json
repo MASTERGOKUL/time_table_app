@@ -10,7 +10,6 @@
     "@types/node": "^20.6.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "axios": "^1.5.0",
     "date-and-time": "^3.0.2",
     "google-fonts": "^1.0.0",
     "moment": "^2.29.4",
@@ -19,7 +18,6 @@
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "serve": "^14.2.1",
-    "typescript": "^5.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
