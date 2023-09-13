@@ -2,7 +2,8 @@ import "./main.css";
 export function LargeBox(props) {
   return (
     <div className="large-box" style={{ backgroundColor: props.color }}>
-      <p style={{ maxWidth: "200px" }}>{props.course}</p>
+      <p style={{ minWidth: "200px" ,maxWidth:"200px"}}>{props.course}</p>
+      <span id="vl"></span>
       <p>{props.code}</p>
     </div>
   );
@@ -17,25 +18,15 @@ export function LargeBox(props) {
 light green - #BDEFA2
 */
 
-export function OneDay() {
+export function OneDay(props) {
+  var colors=["#BDEFF2","#FFD6EF","#FCECAA","#BDEFF2","#AAD6EF","#BDEFA2"]
   return (
     <div className="day-schedule">
-      <LargeBox color="#FFD6EF" code="21AM405" course="Introduction to AI" />
-      <LargeBox
-        color="#FCECAA"
-        code="21AM406"
-        course="Applied machine learing"
-      />
-      <LargeBox
-        color="#BDEFF2"
-        code="21AM403"
-        course="Design and analysis of algorithm"
-      />
-      <LargeBox
-        color="#AAD6EF"
-        code="21AM402"
-        course="Internet and web programming"
-      />
+      {props.day_peroids.map((period, index) => (
+        <LargeBox color={colors[index]} code="21AM000" course={period} />
+        
+      ))} 
+
     </div>
   );
 }
