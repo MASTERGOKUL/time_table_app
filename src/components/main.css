@@ -157,30 +157,10 @@ td {
   height: 45px;
   color: #0e273d;
 }
-tr:nth-child(1) td {
+tr td {
   background-color: #bdeff2;
 }
-tr:nth-child(2) td {
-  background-color: #ffd6ef;
-}
-tr:nth-child(3) td {
-  background-color: #fcecaa;
-}
-tr:nth-child(4) td {
-  background-color: #bdeff2;
-}
-tr:nth-child(5) td {
-  background-color: #ffd6ef;
-}
-tr:nth-child(6) td {
-  background-color: #fcecaa;
-}
-tr:nth-child(7) td {
-  background-color: #bdeff2;
-}
-tr:nth-child(8) td {
-  background-color: #bdeff2;
-}
+
 
 td:nth-child(1) {
   padding: 2px;
