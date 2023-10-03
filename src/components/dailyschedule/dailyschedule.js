@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import moment from "moment/moment";
 import { OneDay } from "../largeBox";
 import { Date, DailyLink } from "../smallBox";
-import banner from "../../assests/images/Daily_schedule-removebg-preview.png";
+import banner from "../../assests/images/Today_schedule-removebg-preview.png";
 import leftStar from "../../assests/images/starLeft-removebg-preview.png";
 import rightStar from "../../assests/images/startRight-removebg-preview.png";
 import rainbow from "../../assests/images/rainbow_rbg.png";

@@ -33,7 +33,7 @@ export function DailyLink() {
 export function WeekLink() {
   return (
     <div style={{ display: "flex" }} className="week" >
-      <SmallBox color="#FFD6EF" text="Daily" flag="true" route="/" />
+      <SmallBox color="#FFD6EF" text="Today" flag="true" route="/" />
       <SmallBox color="#FFD6EF" text="Full Time Table" flag="true" route="/full" />
     </div>
   );
