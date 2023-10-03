@@ -51,6 +51,20 @@ function DailySchedule() {
     fetchData();
   }, [arr, day]);
 
+  let flag_fa = false;
+  for(let i=5;i<period.length;i++){
+    let tempCurrent = period[i]; // ""09.45""
+    let currentTime = hour_minutes;
+    let start = tempCurrent[0].replace('"','').slice(0,-1);  //""09.45"" => 09.45" => 09.45
+    let end = tempCurrent[1].replace('"','').slice(0,-1);
+    if(start <= currentTime && end>= currentTime){
+      flag_fa = true;
+      break;
+    }
+    else{
+      flag_fa=false;
+    }
+  }
   return (
     <>
       {loading && <LoadingIndicator />}{" "}
@@ -67,7 +81,7 @@ function DailySchedule() {
           {/* <img src={line} className="line" alt="line" /> */}
           <Date date={date} day={day} />
           <OneDay day_peroids={dayPeroids} code={code} period={period} currentTime={hour_minutes} />
-          <Indicator />
+          <Indicator flag_fa={flag_fa}/>
           <DailyLink />
         </>
       )}
@@ -75,11 +89,11 @@ function DailySchedule() {
   );
 }
 
-function Indicator() {
+function Indicator(props) {
   return (
     <div className="indiCon">
       <div className="indicator"></div>
-      <p> - Current Period</p>
+      <p> - Current Period &nbsp;&nbsp;{props.flag_fa? "*  FA pa 🙃  *":"" }</p> 
     </div>
   );
 }
