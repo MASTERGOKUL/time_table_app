@@ -9,7 +9,7 @@ import "../main.css";
 import { LoadingIndicator } from "../loading";
 
 const endpoint =
-  "https://script.google.com/macros/s/AKfycby8RkmHQOQ_cs13LzDx4OoHJ0aDu2pUPVaf3cxtTexLJIy3bufNw8fISILRM8OrXVismw/exec";
+  "https://script.google.com/macros/s/AKfycbyisWn-lRRq7W8yX93kaxVP6OwV-DB6yiPsa2Z_rASNt18q-DYr91BK10jkpCs7zVoYdg/exec";
 
 function WeekSchedule() {
   const [arr, setArr] = useState(null);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState  } from "react";
 import moment from "moment/moment";
 import { OneDay } from "../largeBox";
 import { Date, DailyLink } from "../smallBox";
@@ -10,19 +10,22 @@ import rainbow from "../../assests/images/rainbow_rbg.png";
 import "../main.css";
 import { LoadingIndicator } from "../loading";
 const endpoint =
-  "https://script.google.com/macros/s/AKfycby8RkmHQOQ_cs13LzDx4OoHJ0aDu2pUPVaf3cxtTexLJIy3bufNw8fISILRM8OrXVismw/exec";
+  "https://script.google.com/macros/s/AKfycbyisWn-lRRq7W8yX93kaxVP6OwV-DB6yiPsa2Z_rASNt18q-DYr91BK10jkpCs7zVoYdg/exec";
 
 function DailySchedule() {
   const [arr, setArr] = useState(null);
   const [dayPeroids, setDayPeroids] = useState([]);
   const [code, setCode] = useState([]);
+  const [period, setPeriod] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   // Extract day periods based on current day
   const dateObject = moment();
   const day = dateObject.format("dddd"); // Full day name
   const date = dateObject.format("DD/MM/YY"); // date in DD/MM/YY format
-
+  const hour_minutes = dateObject.format("hh.mm");
+  // console.log(hour_minutes);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -33,7 +36,9 @@ function DailySchedule() {
         setDayPeroids(dayPeriods ? dayPeriods[day] : []);
         const code = data.code;
         setCode(code);
-        // console.log(code);
+        const period = data.period;
+        setPeriod(period);
+        // console.log(period);
         // Data fetching is completed, stop loading
         setLoading(false);
       } catch (error) {
@@ -61,7 +66,7 @@ function DailySchedule() {
           </div>
           {/* <img src={line} className="line" alt="line" /> */}
           <Date date={date} day={day} />
-          <OneDay day_peroids={dayPeroids} code={code} />
+          <OneDay day_peroids={dayPeroids} code={code} period={period} currentTime={hour_minutes} />
           <Indicator />
           <DailyLink />
         </>
