@@ -24,8 +24,8 @@ function DailySchedule() {
   const dateObject = moment();
   const day = dateObject.format("dddd"); // Full day name
   const date = dateObject.format("DD/MM/YY"); // date in DD/MM/YY format
-  const hour_minutes = dateObject.format("HH.mm");
-  // console.log(hour_minutes);
+  const hour_minutes = dateObject.format("hh.mm");
+  console.log(hour_minutes);
   useEffect(() => {
     async function fetchData() {
       try {
