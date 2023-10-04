@@ -21,14 +21,14 @@ light green - #BDEFA2
 */
 
 export function OneDay(props) {
-  var colors = [
+ /* var colors = [
     "#BDEFF2",
     "#FFD6EF",
     "#FCECAA",
     "#BDEFF2",
     "#AAD6EF",
     "#BDEFA2",
-  ];
+  ];*/
   let reference ;
   for(let i=0;i<5;i++){
     let tempCurrent = props.period[i]; // ""09.45""
@@ -53,7 +53,8 @@ export function OneDay(props) {
                  color_code = "#BDEFA2";
               }
               else{
-                 color_code=colors[index];
+                // color_code=colors[index];
+                color_code="#BDEFF2";
               }
               return (
                 <LargeBox
