@@ -83,7 +83,7 @@ p {
 /* daily schedule */
 .img {
   z-index: 2;
-  margin-top: 80px;
+  margin-top: 30px;
   display: flex;
 }
 .leftstar {
@@ -108,8 +108,8 @@ p {
 }
 .rainbow {
   z-index: -1;
-  top: -200px;
-  left: -50px;
+  top: -241px;
+  left: -52px;
   position: absolute;
   height: 50%;
   width: 80%;
