@@ -56,7 +56,7 @@ export function OneDay(props) {
               let blur;
               if (index === reference) {
                 color_code = "#BDEFF2";
-                font = "18px";
+                font = "15px";//if it is larger it is affect the box 
                 blur = "none";
               } else {
                 // color_code=colors[index];
