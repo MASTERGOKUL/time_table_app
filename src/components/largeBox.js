@@ -52,19 +52,29 @@ export function OneDay(props) {
             const courseName = Object.keys(code)[0];
             if (courseName === period) {
               let color_code;
+              let font;
+              let blur
               if(index === reference){
                  color_code = "#BDEFF2";
+                 font="18px";
+                 blur="none"
               }
               else{
                 // color_code=colors[index];
                 color_code="#F2F2F2";
+                font="14px"
+                blur="blur(0.5px)"
               }
               return (
+                <span style={{fontSize:font,filter:blur}}>
+
+                
                 <LargeBox 
                   color={color_code}
                   code={code[period]}
                   course={period}
                 />
+                </span>
               );
             }
             return null;
