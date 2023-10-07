@@ -9,6 +9,10 @@ light green - #BDEFA2
 
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 
+body{
+  margin: 0;
+  padding: 0;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 20px;
@@ -16,14 +20,14 @@ light green - #BDEFA2
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #bdeff2;
+  box-shadow: inset 0px 0 10px #bdeff2;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffd6ef;
-  border-radius: 10px;
+  border-radius:3px;
 }
 @font-face {
   font-family: "genty";
@@ -147,6 +151,10 @@ table {
   table-layout: fixed;
   width: 100%;
 }
+td:first-child{
+  width: 110px !important;
+}
+
 td {
   padding: 5px;
   border: 5px solid rgb(255, 255, 255);

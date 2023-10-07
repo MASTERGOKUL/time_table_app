@@ -99,7 +99,7 @@ function CurrentPeriod(props){
       break;
     }
     else{
-      text="";
+      text="Entha Schedulum Illa Bro... Enjoy Your Day 😊";
     }
   }
   return(

@@ -22,7 +22,7 @@ light green - #BDEFA2
 */
 
 export function OneDay(props) {
- /* var colors = [
+  /* var colors = [
     "#BDEFF2",
     "#FFD6EF",
     "#FCECAA",
@@ -30,20 +30,20 @@ export function OneDay(props) {
     "#AAD6EF",
     "#BDEFA2",
   ];*/
-  let reference ;
-  for(let i=0;i<5;i++){
+  let reference;
+  for (let i = 0; i < 5; i++) {
     let tempCurrent = props.period[i]; // ""09.45""
-    let currentTime = moment(props.currentTime,"hh.mm a");
-    let start = tempCurrent[0].replace('"','').slice(0,-1);  //""09.45"" => 09.45" => 09.45
-    let end = tempCurrent[1].replace('"','').slice(0,-1);
-    const startTime = moment(start, 'hh.mm a');
-    const endTime = moment(end, 'hh.mm a');
-    if(currentTime.isBetween(startTime, endTime)){
+    let currentTime = moment(props.currentTime, "hh.mm a");
+    let start = tempCurrent[0].replace('"', "").slice(0, -1); //""09.45"" => 09.45" => 09.45
+    let end = tempCurrent[1].replace('"', "").slice(0, -1);
+    const startTime = moment(start, "hh.mm a");
+    const endTime = moment(end, "hh.mm a");
+    if (currentTime.isBetween(startTime, endTime)) {
       reference = i;
     }
   }
   // console.log(reference);
-  
+
   return (
     <div className="day-schedule">
       {props.day_peroids.map((period, index) => (
@@ -53,27 +53,24 @@ export function OneDay(props) {
             if (courseName === period) {
               let color_code;
               let font;
-              let blur
-              if(index === reference){
-                 color_code = "#BDEFF2";
-                 font="18px";
-                 blur="none"
-              }
-              else{
+              let blur;
+              if (index === reference) {
+                color_code = "#BDEFF2";
+                font = "18px";
+                blur = "none";
+              } else {
                 // color_code=colors[index];
-                color_code="#F2F2F2";
-                font="14px"
-                blur="blur(0.5px)"
+                color_code = "#F2F2F2";
+                font = "14px";
+                blur = "blur(0.3px)";
               }
               return (
-                <span style={{fontSize:font,filter:blur}}>
-
-                
-                <LargeBox 
-                  color={color_code}
-                  code={code[period]}
-                  course={period}
-                />
+                <span style={{ fontSize: font, filter: blur }}>
+                  <LargeBox
+                    color={color_code}
+                    code={code[period]}
+                    course={period}
+                  />
                 </span>
               );
             }
