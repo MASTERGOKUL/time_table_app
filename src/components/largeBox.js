@@ -1,4 +1,5 @@
 import "./main.css";
+import moment from "moment";
 // import { useRef } from "react";
 import React from "react";
 export function LargeBox(props) {
@@ -32,10 +33,12 @@ export function OneDay(props) {
   let reference ;
   for(let i=0;i<5;i++){
     let tempCurrent = props.period[i]; // ""09.45""
-    let currentTime = props.currentTime;
+    let currentTime = moment(props.currentTime,"hh.mm a");
     let start = tempCurrent[0].replace('"','').slice(0,-1);  //""09.45"" => 09.45" => 09.45
     let end = tempCurrent[1].replace('"','').slice(0,-1);
-    if(start <= currentTime && end>= currentTime){
+    const startTime = moment(start, 'hh.mm a');
+    const endTime = moment(end, 'hh.mm a');
+    if(currentTime.isBetween(startTime, endTime)){
       reference = i;
     }
   }
@@ -57,7 +60,7 @@ export function OneDay(props) {
                 color_code="#F2F2F2";
               }
               return (
-                <LargeBox
+                <LargeBox 
                   color={color_code}
                   code={code[period]}
                   course={period}

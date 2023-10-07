@@ -24,7 +24,7 @@ function DailySchedule() {
   const dateObject = moment();
   const day = dateObject.format("dddd"); // Full day name
   const date = dateObject.format("DD/MM/YY"); // date in DD/MM/YY format
-  const hour_minutes = dateObject.format("hh.mm");
+  const hour_minutes = dateObject.format("hh.mm a");
   console.log(hour_minutes);
   useEffect(() => {
     async function fetchData() {
@@ -51,20 +51,7 @@ function DailySchedule() {
     fetchData();
   }, [arr, day]);
 
-  let flag_fa = false;
-  for(let i=5;i<period.length;i++){
-    let tempCurrent = period[i]; // ""09.45""
-    let currentTime = hour_minutes;
-    let start = tempCurrent[0].replace('"','').slice(0,-1);  //""09.45"" => 09.45" => 09.45
-    let end = tempCurrent[1].replace('"','').slice(0,-1);
-    if(start <= currentTime && end>= currentTime){
-      flag_fa = true;
-      break;
-    }
-    else{
-      flag_fa=false;
-    }
-  }
+
   return (
     <>
       {loading && <LoadingIndicator />}{" "}
@@ -81,19 +68,52 @@ function DailySchedule() {
           {/* <img src={line} className="line" alt="line" /> */}
           <Date date={date} day={day} />
           <OneDay day_peroids={dayPeroids} code={code} period={period} currentTime={hour_minutes} />
-          <Indicator flag_fa={flag_fa}/>
+          <CurrentPeriod period={period} time={hour_minutes} />
+          <Indicator />
           <DailyLink />
         </>
       )}
     </>
   );
 }
+function CurrentPeriod(props){
+  const period = props.period;
+  const hour_minutes = props.time;
+  let text ;
+  let time;
+  for(let i=0;i<period.length;i++){
+    let tempCurrent = period[i]; // ""09.45"
+    let currentTime = moment(hour_minutes,"hh.mm a");
+    
+    let start = tempCurrent[0].replace('"','').slice(0,-1);  //""09.45"" => 09.45" => 09.45
+    let end = tempCurrent[1].replace('"','').slice(0,-1);
+     const startTime = moment(start, 'hh.mm a');
+     const endTime = moment(end, 'hh.mm a');
 
-function Indicator(props) {
+    // console.log(start+" "+end)
+    // console.log(currentTime);
+    if(currentTime.isBetween(startTime, endTime)){
+      text = tempCurrent[2];
+      time=start+" to "+end;
+      console.log(text);
+      break;
+    }
+    else{
+      text="";
+    }
+  }
+  return(
+    <div className="currentPeriod">
+      <p>{text}</p>
+      <p>{time}</p>
+    </div>
+  );
+}
+function Indicator() {
   return (
     <div className="indiCon">
       <div className="indicator"></div>
-      <p> - Current Period &nbsp;&nbsp;{props.flag_fa? "*  FA pa 🙃  *":"" }</p> 
+      <p> - Current Period </p> 
     </div>
   );
 }

@@ -63,6 +63,7 @@ p {
   font-size: medium;
   height: 50px;
   width: 340px;
+  
 }
 #vl {
   border-left: 2px solid #fff;
@@ -133,7 +134,7 @@ p {
 }
 .indiCon {
   font-family: "genty";
-  margin: 40px 0px 0px 40px;
+  margin: 0px 0px 0px 40px;
   display: flex;
 }
 
@@ -175,8 +176,19 @@ td:nth-child(1) {
   justify-content: space-between;
   margin:10px;
 }
-
-
+/* current period status */
+.currentPeriod{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "genty";
+  font-size: larger;
+}
+.currentPeriod p{
+  color: #0e273d;
+  text-shadow: #BDEFF2 -1px 1px 1px;
+}
 /* loading style */
 .loading {
   display: flex;
