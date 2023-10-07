@@ -50,11 +50,11 @@ export function OneDay(props) {
             if (courseName === period) {
               let color_code;
               if(index === reference){
-                 color_code = "#BDEFA2";
+                 color_code = "#BDEFF2";
               }
               else{
                 // color_code=colors[index];
-                color_code="#BDEFF2";
+                color_code="#F2F2F2";
               }
               return (
                 <LargeBox

@@ -83,7 +83,7 @@ p {
 /* daily schedule */
 .img {
   z-index: 2;
-  margin-top: 30px;
+  margin-top: 10%;
   display: flex;
 }
 .leftstar {
@@ -108,8 +108,8 @@ p {
 }
 .rainbow {
   z-index: -1;
-  top: -241px;
-  left: -52px;
+  top: -34%;
+  left: -14%;
   position: absolute;
   height: 50%;
   width: 80%;
@@ -129,7 +129,7 @@ p {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  background-color: #bdefa2;
+  background-color: #BDEFF2;
 }
 .indiCon {
   font-family: "genty";
