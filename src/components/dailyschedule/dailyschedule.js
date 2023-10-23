@@ -116,14 +116,14 @@ function CurrentPeriod(props) {
     const extremeStart = moment("08.44 am", "hh.mm a");
     const extremeEnd = moment("04.31 pm", "hh.mm a");
     // console.log(start+" "+end)
-    // console.log(currentTime);
     if (currentTime.isBetween(startTime, endTime)) {
       text = tempCurrent[2];
       time = start + " to " + end;
       // console.log(text);
       break;
-    } else if (currentTime.isBetween(extremeStart, extremeEnd)) {
+    } else if (currentTime.isAfter(extremeEnd) || currentTime.isBefore(extremeStart)) {
       text = "Entha Schedulum Illa Bro... Enjoy Your Day 😊";
+      break;
     }
     else{
       text = "Next Period ";
