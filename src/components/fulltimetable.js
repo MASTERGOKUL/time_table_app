@@ -7,7 +7,8 @@ function Full() {
         title="sheet"
         style={{ height: "90vh", width: "100%" }}
         // src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTR2vDR7_whn6sv9VGVDZmEKaiHUgNpX1OtPIv7-KOq6HGU6uDvVfTzF5cIrgcmA/pubhtml"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROmZZaOnEERg1OPPCpqN9ntMmIDGsxF6ixYPtHsCAckb_I7e1iQ9ZyvX4b9e4Eyw/pubhtml"
+        // src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROmZZaOnEERg1OPPCpqN9ntMmIDGsxF6ixYPtHsCAckb_I7e1iQ9ZyvX4b9e4Eyw/pubhtml"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQiCHf1E4-6T_iYyGb7u1F7pgcV74iqoJDbHbiLW9jxsDjjUmBRhxZib8-5e31vCwUC0AkVLAQfyiZm/pubhtml"
       />
       <div id="full-route">
         <SmallBox color="#FFD6EF" text="Week" flag="true" route="/week" />

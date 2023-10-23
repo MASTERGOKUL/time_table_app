@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      
         <Routes>
          <Route path="/" element={<DailySchedule />} />
          <Route path="/week" element={<WeekSchedule />} />
