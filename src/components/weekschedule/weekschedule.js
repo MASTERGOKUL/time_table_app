@@ -1,12 +1,12 @@
-import { WeekLink } from "../smallBox";
+import { WeekLink } from "../boxes/smallBox";
 import { useEffect, useState } from "react";
 import banner from "../../assests/images/WEEKLY_SHECULE-removebg-preview.png";
 import leftStar from "../../assests/images/starLeft-removebg-preview.png";
 import rightStar from "../../assests/images/startRight-removebg-preview.png";
 import rainbow from "../../assests/images/rainbow_rbg.png";
-import { Table } from "../table";
+import { Table } from "../table/table";
 import "../main.css";
-import { LoadingIndicator } from "../loading";
+import { LoadingIndicator } from "../loading/loading";
 
 const endpoint =
   "https://script.google.com/macros/s/AKfycbyisWn-lRRq7W8yX93kaxVP6OwV-DB6yiPsa2Z_rASNt18q-DYr91BK10jkpCs7zVoYdg/exec";

@@ -1,4 +1,4 @@
-import "./main.css";
+import "../main.css";
 import moment from "moment";
 // import { useRef } from "react";
 import React from "react";
@@ -42,15 +42,16 @@ export function OneDay(props) {
       reference = i;
     }
   }
-  // console.log(reference);
+  // console.log(props.code);
 
   return (
     <div className="day-schedule">
-      {props.day_peroids.map((period, index) => (
-        <>
-          {props.code.map((code) => {
-            const courseName = Object.keys(code)[0];
+      {props.day_peroids.map((period, index) => ( //['BIG DATA TECHNOLOGIES', 'DEEP LEARNING', 'INTELLIGENT MULTI AGENT AND EXPERT SYSTEMS', 'AGILE SOFTWARE DEVELOPMENT', 'DEEP LEARNING LAB']
+        <span key={index}>
+          {props.code.map((code,codeIndex) => {
+            const courseName = code[0];// ['DEEP LEARNING', '21AM504']
             if (courseName === period) {
+              const key = `${index}_${codeIndex}`;
               let color_code;
               let font;
               let blur;
@@ -65,10 +66,10 @@ export function OneDay(props) {
                 blur = "blur(0.3px)";
               }
               return (
-                <span style={{ fontSize: font, filter: blur }}>
+                <span style={{ fontSize: font, filter: blur }} key={key}>
                   <LargeBox
                     color={color_code}
-                    code={code[period]}
+                    code={code[1]}
                     course={period}
                   />
                 </span>
@@ -76,7 +77,7 @@ export function OneDay(props) {
             }
             return null;
           })}
-        </>
+        </span>
       ))}
     </div>
   );

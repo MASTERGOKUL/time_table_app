@@ -1,5 +1,5 @@
-import { SmallBox } from "./smallBox";
-import "./main.css";
+import { SmallBox } from "../boxes/smallBox";
+import "../main.css";
 function Full() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>

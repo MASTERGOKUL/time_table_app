@@ -1,6 +1,6 @@
 import DailySchedule from "./components/dailyschedule/dailyschedule";
 import WeekSchedule from "./components/weekschedule/weekschedule";
-import Full from "./components/fulltimetable";
+import Full from "./components/full/fulltimetable";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
