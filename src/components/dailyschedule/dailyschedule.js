@@ -9,8 +9,11 @@ import rainbow from "../../assests/images/rainbow_rbg.png";
 // import line from "../../assests/images/LINE-removebg-preview.png";
 import "../main.css";
 import { LoadingIndicator } from "../loading";
+// const endpoint =
+//   "https://script.google.com/macros/s/AKfycbyisWn-lRRq7W8yX93kaxVP6OwV-DB6yiPsa2Z_rASNt18q-DYr91BK10jkpCs7zVoYdg/exec"; // Google Apps Script URL
 const endpoint =
   "https://script.google.com/macros/s/AKfycbyisWn-lRRq7W8yX93kaxVP6OwV-DB6yiPsa2Z_rASNt18q-DYr91BK10jkpCs7zVoYdg/exec";
+
 
 function DailySchedule() {
   const [arr, setArr] = useState(null);
