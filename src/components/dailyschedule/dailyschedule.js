@@ -64,7 +64,7 @@ function DailySchedule() {
     }
 
     fetchData();
-  }, []);
+  });
 
   return (
     <>
