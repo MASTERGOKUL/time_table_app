@@ -96,7 +96,15 @@ function CurrentPeriod(props) {
   let time;
   for (let i = 0; i < period.length; i++) {
     let tempCurrent = period[i]; // ""09.45"
-    let next = period[i + 1];
+    let nextIndex ;
+    if(i===period.length-1){
+      nextIndex = 0;
+    }
+    else{
+      nextIndex = i+1;
+    }
+    let next = period[nextIndex];
+    console.log(next,"next",i,i+1)
     let currentTime = moment(hour_minutes, "hh.mm a");
 
     let start = tempCurrent[0].replace('"', "").slice(0, -1); //""09.45"" => 09.45" => 09.45
