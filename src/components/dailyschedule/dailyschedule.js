@@ -36,7 +36,7 @@ function DailySchedule() {
           .then((snapshot) => {
             if (snapshot.exists()) {
               data = snapshot.val();
-              console.log(data);
+              // console.log(data);
             } else {
               console.log("No data found.");
             }

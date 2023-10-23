@@ -1,6 +1,7 @@
 export function Table(props) {
   const Periods = ["I", "II", "III", "IV", "V"];
   const arr = props.arr;
+  // console.log(arr);
   return (
     <>
       <div className="table">
@@ -8,7 +9,7 @@ export function Table(props) {
           <tbody>
             <tr>
               <td
-                key={"preiods/DAYS"}
+                key={"preiods_DAYS"}
                 style={{ borderRadius: "15px", backgroundColor: "#FCECAA" }}
               >
                 Periods / Days
@@ -16,37 +17,41 @@ export function Table(props) {
               {Periods.map((cell, index) => (
                 <td
                   id={"td" + index}
-                  key={cell + "-" + index}
+                  key={index}
                   style={{ borderRadius: "15px", backgroundColor: "#FCECAA" }}
                 >
                   {cell}
                 </td>
               ))}
             </tr>
-            {arr.data.map((row, rowIndex) => (
+            {arr.map((row, rowIndex) => (
               <tr key={rowIndex}>
-                {Object.values(row).map((items, itemIndex) => (
+                <td
+                  key={rowIndex+"_"+row[0]}
+                  style={{
+                    borderRadius: "15px",
+                    backgroundColor: "#FCECAA",
+                  }}
+                >
+                  {row[0]}
+                </td>
+                {row.slice(1).map((items, itemIndex) => (
                   <>
                     <td
-                      key={itemIndex}
+                      key={rowIndex+"_"+itemIndex+"_"+row[0]}
                       style={{
                         borderRadius: "15px",
-                        backgroundColor: "#FCECAA",
+                        backgroundColor: items.includes("LAB")
+                          ? "#FCECAA"
+                          : "" || items.includes("AGILE")
+                          ? "#FFD6EF"
+                          : "" || items.includes("UI")
+                          ? "#FFD6EF"
+                          : "",
                       }}
                     >
-                      {Object.keys(row)}
+                      {items}
                     </td>
-                    {items.map((item, index) => (
-                      <td
-                        key={index}
-                        style={{
-                          borderRadius: "15px",
-                          backgroundColor: item.includes("LAB") ? "#FCECAA": "" || item.includes("AGILE") ? "#FFD6EF":"" || item.includes("UI") ? "#FFD6EF":"" 
-                        }}
-                      >
-                        {item}
-                      </td>
-                    ))}
                   </>
                 ))}
               </tr>

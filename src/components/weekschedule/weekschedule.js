@@ -25,7 +25,8 @@ function WeekSchedule() {
           .then((snapshot) => {
             if (snapshot.exists()) {
               data = snapshot.val();
-              console.log(data);
+              setWeek(data.slice(1));
+              // console.log(data);
             } else {
               console.log("No data found.");
             }
@@ -33,8 +34,8 @@ function WeekSchedule() {
           .catch((error) => {
             console.error("Error fetching data:", error);
           });
-          console.log(data);
-          setWeek(data);
+          // console.log(data);
+          
         
         // Data fetching is completed, stop loading
         setLoading(false);
@@ -43,6 +44,7 @@ function WeekSchedule() {
         setLoading(false); // Handle errors by stopping loading
       }
     }
+    // console.log(week);
 
     fetchData();
   });
