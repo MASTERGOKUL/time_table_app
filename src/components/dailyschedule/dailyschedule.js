@@ -96,10 +96,13 @@ function CurrentPeriod(props) {
   let time;
   for (let i = 0; i < period.length; i++) {
     let tempCurrent = period[i]; // ""09.45"
+    let next = period[i + 1];
     let currentTime = moment(hour_minutes, "hh.mm a");
 
     let start = tempCurrent[0].replace('"', "").slice(0, -1); //""09.45"" => 09.45" => 09.45
     let end = tempCurrent[1].replace('"', "").slice(0, -1);
+    let nextStart = next[0].replace('"', "").slice(0, -1);
+    let nextEnd = next[1].replace('"', "").slice(0, -1);
     const startTime = moment(start, "hh.mm a");
     const endTime = moment(end, "hh.mm a");
     const extremeStart = moment("08.44 am", "hh.mm a");
@@ -113,6 +116,10 @@ function CurrentPeriod(props) {
       break;
     } else if (currentTime.isBetween(extremeStart, extremeEnd)) {
       text = "Entha Schedulum Illa Bro... Enjoy Your Day 😊";
+    }
+    else{
+      text = "Next Period ";
+      time = nextStart + " to " + nextEnd;
     }
   }
   return (
