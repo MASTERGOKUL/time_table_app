@@ -59,7 +59,7 @@ export function BottomNav() {
             <span className="icon">
               <ion-icon name="information-circle-outline"></ion-icon>
             </span>
-            <span className="text">Settings</span>
+            <span className="text">Info</span>
           </Link>
         </li>
         <div className="indicator"></div>
