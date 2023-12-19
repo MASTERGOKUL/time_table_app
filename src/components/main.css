@@ -88,7 +88,6 @@ p {
 /* daily schedule */
 .img {
   z-index: 2;
-  margin-top: 10%;
   display: flex;
 }
 .leftstar {
@@ -129,7 +128,7 @@ p {
   width: 80%;
 }
 
-.indicator {
+.indicator_period {
   margin: 12px 10px 0 0;
   height: 25px;
   width: 25px;
@@ -233,4 +232,9 @@ td:nth-child(1) {
   100%{
     transform: rotate(360deg);
   }
+}
+
+
+#daily-container{
+  height: 100dvh;
 }

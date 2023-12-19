@@ -22,19 +22,3 @@ export function Date(props) {
     </div>
   );
 }
-export function DailyLink() {
-  return (
-    <div style={{ display: "flex" }} className="date" >
-      <SmallBox color="#FFD6EF" text="About" flag="true" route="/"/>
-      <SmallBox color="#FFD6EF" text="Week" flag="true" route="/week"/>
-    </div>
-  );
-}
-export function WeekLink() {
-  return (
-    <div style={{ display: "flex" }} className="week" >
-      <SmallBox color="#FFD6EF" text="Today" flag="true" route="/" />
-      <SmallBox color="#FFD6EF" text="Full Time Table" flag="true" route="/full" />
-    </div>
-  );
-}

@@ -1,0 +1,8 @@
+#texted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90dvh;
+    text-align: center;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment/moment";
 import { OneDay } from "../boxes/largeBox";
-import { Date, DailyLink } from "../boxes/smallBox";
+import { Date } from "../boxes/smallBox";
 import banner from "../../assests/images/Today_schedule-removebg-preview.png";
 import leftStar from "../../assests/images/starLeft-removebg-preview.png";
 import rightStar from "../../assests/images/startRight-removebg-preview.png";
@@ -67,7 +67,7 @@ function DailySchedule() {
   });
 
   return (
-    <>
+    <div id="daily-container">
       {loading && <LoadingIndicator />}{" "}
       {/* Display loading indicator while fetching */}
       {!loading /* Display elements once fetching is completed */ && (
@@ -83,10 +83,9 @@ function DailySchedule() {
           <OneDay day_peroids={dayPeroids} code={code} period={period} currentTime={hour_minutes} />
           <CurrentPeriod period={period} time={hour_minutes} />
           <Indicator />
-          <DailyLink />
         </>
       )}
-    </>
+    </div>
   );
 }
 function CurrentPeriod(props) {
@@ -140,7 +139,7 @@ function CurrentPeriod(props) {
 function Indicator() {
   return (
     <div className="indiCon">
-      <div className="indicator"></div>
+      <div className="indicator_period"></div>
       <p> - Current Period </p>
     </div>
   );

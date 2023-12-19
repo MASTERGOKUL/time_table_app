@@ -1,0 +1,31 @@
+.time{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.exam_title{
+    text-align: center;
+}
+#exam_table{
+    margin-top: 2rem;
+    overflow-y: scroll;
+    margin-inline: auto;
+    height: 70dvh;
+    width: 90%;
+}
+#exam_table,#exam_table thead,#exam_table tbody,#exam_table tr,#exam_table td,#exam_table th{
+    font-size: 1rem;
+    border-collapse: collapse;
+    border-radius: 0px !important;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+}
+#exam_table td,#exam_table th{
+    box-sizing: border-box;
+    border: 2px solid #000;
+    
+}
+#exam_table th{
+    background-color: #222327;
+    color: #fff;
+}
