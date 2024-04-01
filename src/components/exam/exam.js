@@ -50,7 +50,7 @@ function Exam() {
           <h1 className="exam_title">🎓{exam[0][0]}</h1>
           <div className="time">
             <span className="forenoon">🌞FN - {exam[0][3]}</span>
-            {/* <span className="afternoon">🌙AN {exam[0][4]}</span> */}
+            <span className="afternoon">🌙AN {exam[0][4]}</span> 
           </div>
           <table id="exam_table">
             <thead>
