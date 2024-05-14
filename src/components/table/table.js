@@ -1,5 +1,5 @@
 export function Table(props) {
-  const Periods = ["I", "II", "III", "IV", "V","VI"];
+  const Periods = ["I", "II", "III", "IV", "V","VI","VII"];
   const arr = props.arr;
   // console.log(arr);
   return (
